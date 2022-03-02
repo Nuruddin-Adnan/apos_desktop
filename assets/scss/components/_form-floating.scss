@@ -1,0 +1,23 @@
+@import "../abstracts/mixins";
+
+.form-floating {
+    .form-control:focus {
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+        border-color: #3178ff;
+    }
+
+    .form-control {
+        @include font-style(16px, $color-black, 600);
+        border-radius: 8px;
+    }
+
+    label {
+        font-weight: 500;
+    }
+
+}
+
+.form-floating>.form-control:focus~label, .form-floating>.form-control:not(:placeholder-shown)~label, .form-floating>.form-select~label {
+    opacity: 1;
+    color: $text-gray;
+}

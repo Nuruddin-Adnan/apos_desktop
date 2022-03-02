@@ -1,0 +1,201 @@
+@import "../abstracts/mixins";
+
+.navbar {
+    .search {
+        padding-left: 3rem;
+        .fa-search {
+            left: 1.2rem;
+        }
+
+        #search-input.form-control {
+            @include font-style(16px, $color-black, 600);
+            border-radius: 8px;
+            // padding-left: 2rem;
+            background: #f9faff;
+
+            &.form-control-lg {
+               padding: .9rem 1.5rem 0.9rem 2.2rem;
+            }
+
+            &::placeholder {
+                @include font-style(15px, $text-gray-light, 500);
+            }
+
+            &:focus {
+                background: $color-white;
+            }
+        }
+    }
+
+    .profile {
+        padding: 0 1rem 0 3rem;
+        .user-avatar {
+            padding-right: 10px;
+            img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                display: block;
+                object-fit: cover;
+            }
+        }
+
+        .user-name {
+            @include font-style(16px, rgba($color-black, 0.8), 700);
+        } 
+
+        .btn {
+            color: $text-gray;
+            font-size: 25px;
+            margin-left: 2rem;
+        }
+    } 
+}
+
+
+// sidenav-desktop 
+.sidenav-desktop {
+    width: 100%;
+    max-width: 250px;
+    background: $color-white;
+    box-shadow: 6px 0px 10px 0px rgba(0, 0, 0, 0.05);
+    z-index: 1;
+    min-height: calc(100vh - 80px);
+    overflow: auto;
+
+    .main-nav{
+        height: calc(90vh - 185px);
+        overflow: auto;
+        .nav-list {
+            li {
+                position: relative;
+                padding: 10px 1rem;
+
+                a {
+                    @include font-style(15px, $text-gray, 700);
+
+                    i {
+                        width: 30px;
+                        text-align: center;
+                        font-size: 18px;
+                    }
+
+                    &:hover,
+                    &.active {
+                        color: $text-blue;
+                        i{
+                            color: $text-blue;
+                        }
+                    }
+                }
+              
+            }
+        }
+    }
+
+    .nav-footer {
+        @include font-style(15px, rgba($color-black, 0.3), 600);
+        text-align: center;
+        padding: 40px 0;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        background: $color-white;
+        width: 100%;
+    }
+}
+  
+
+// side nav
+.side-nave {
+    background: linear-gradient(315deg, $color-blue, $color-blue-light);
+    
+    .offcanvas-header {
+        padding-top: 40px;
+        .btn-close{
+            color: $color-white !important;
+            background: transparent;
+            opacity: 1;
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
+    }
+
+    .offcanvas-body {
+        .profile {
+            background: linear-gradient(90deg, rgba($color-white, 0.1), transparent);
+            padding: 1rem;
+
+            .user-avatar {
+                padding-right: 10px;
+                img {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    display: block;
+                    object-fit: cover;
+                }
+            }
+
+            .info {
+                .name {
+                    @include font-style(18px, $color-white, 700);
+                } 
+                .email{
+                    @include font-style(12px, $color-white, 500);
+                    opacity: 0.8;
+                }
+            }
+
+            .btn {
+                color: $color-white;
+                font-size: 25px;
+            }
+        } 
+
+        .main-nav{
+            .nav-list {
+                li {
+                    position: relative;
+                    padding: 10px 1rem;
+
+                    a {
+                        @include font-style(15px, $color-white, 700);
+
+                        i {
+                            width: 30px;
+                            text-align: center;
+                        }
+                    }
+
+                    &.active::before,
+                    &:hover::before {
+                        content:'';
+                        width: 4px;
+                        height: 100%;
+                        background: $color-white;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        border-top-right-radius: 5px;
+                        border-bottom-right-radius: 5px;
+                    }
+                }
+            }
+
+            .side-image {
+                box-shadow: -7px 5px 50px rgba($color-black, 0.15)
+            }
+        }
+
+        .nav-footer {
+            @include font-style(15px, rgba($color-white, 0.5), 600);
+            text-align: center;
+            padding-top: 40px;
+        }
+    }
+}
+  

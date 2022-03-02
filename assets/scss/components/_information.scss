@@ -1,0 +1,55 @@
+@import "../abstracts/mixins";
+
+// informatio modal
+.offcanvas-end.information {
+    width: 325px;
+    top: 80px;
+
+    .information-toggle-btn {
+        position: absolute;
+        right: calc(100% - 1px);
+        top: 1rem;
+        background: $color-white;
+        @include font-style(25px, $text-gray, 700);
+        border: 1px solid rgba(0,0,0,.2);
+        border-right: 0;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        box-shadow: -3px 0px 4px 0px rgba(0, 0, 0, 0.15);
+        padding: .2rem .8rem;
+    }
+
+    .offcanvas-body {
+
+        .section-title {
+            @include font-style(16px, $color-black, 700);
+            padding-top: 1rem;
+        }
+    
+        .highlighted-text {
+            @include font-style(20px, $text-blue, 700);
+            background: rgba($text-blue, 0.05);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 30px;
+        }
+    
+        .information-list {
+            li {
+                border-bottom: 1px solid rgba($color-black, .10);
+                padding: 20px 0 15px 0;
+    
+                label {
+                    @include font-style(12px, $text-gray-light, 500);
+                }
+                .value {
+                    @include font-style(15px, $color-black, 600); 
+                }
+            }
+        }
+    }
+}
+
+  
